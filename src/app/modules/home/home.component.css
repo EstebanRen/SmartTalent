@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.map,
+.overlay-div {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  z-index: 2;
+  overflow: hidden;
+  height: 10vh;
+}
+
+.background-image {
+  background-color: #151F6D;
+}
+
+.body{
+  background-color:#737B4C;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  min-height: 90vh;
+}
+
+.map {
+  height: 70vh;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.overlay-div {
+  position: absolute;
+  top: calc(10vh - 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+
+
+@media only screen and (max-width: 688px) {
+  .overlay-div{
+      width: auto;
+      height: auto;
+      top: calc(30vh - 120px);
+  }
+
+}

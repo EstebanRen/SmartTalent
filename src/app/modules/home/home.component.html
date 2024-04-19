@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="header background-image">
+    <app-navbar [itemsCart]="this.itemsCart" (deleteProductToCart)="deleteProductToCart($event)" (addOrderOut)="addOrder()"></app-navbar>
+  </div>
+  <div class="body">
+    <div class="list">
+      <app-list-products  [products]="this.products" (addProductToCart)="addProductToCart($event)"></app-list-products>
+    </div>
+  </div>
+</div>

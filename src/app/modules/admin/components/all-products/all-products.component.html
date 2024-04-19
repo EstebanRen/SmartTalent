@@ -1,0 +1,54 @@
+<div class="list" *ngIf="this.products">
+  <div class="table-info">
+    <div class="butons-table">
+      <button mat-flat-button color="primary" (click)="onClickAddProduct()">Agregar Producto</button>
+    </div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource"  >
+        <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Descripción">
+          <th mat-header-cell *matHeaderCellDef>Descripción </th>
+          <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Precio">
+          <th mat-header-cell *matHeaderCellDef>Precio</th>
+          <td mat-cell *matCellDef="let element"> {{ element.price | priceCop }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Cantidad">
+          <th mat-header-cell *matHeaderCellDef>Cantidad</th>
+          <td mat-cell *matCellDef="let element">{{ element.availableQuantity }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Tipo">
+          <th mat-header-cell *matHeaderCellDef>Tipo</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.frut ? 'Fruta' : (element.vegetable ? 'Verdura' : (element.other ? 'Otros' : '')) }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button [matMenuTriggerFor]="lists" (menuOpened)="selectedItem = element"> <mat-icon>more_vert</mat-icon></button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+<mat-menu #lists="matMenu">
+  <button mat-menu-item (click)="onClickEditProduct()">Editar Producto</button>
+  <button mat-menu-item (click)="onClickDeleteProduct()">Eliminar Producto</button>
+</mat-menu>

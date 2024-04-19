@@ -1,0 +1,52 @@
+<div class="pop-up-info">
+  <h2 *ngIf="!this.data">
+    Agregar producto
+  </h2>
+  <h2 *ngIf="this.data">
+    Editar producto
+  </h2>
+  <form [formGroup]="Form" #f="ngForm" class="content-form">
+    <div class="form-teams">
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>Nombre</mat-label>
+        <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput type="text"
+          name="name-product" formControlName="name" placeholder="" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>Descripción</mat-label>
+        <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput type="text"
+          name="description-product" formControlName="description" placeholder="" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>Precio</mat-label>
+        <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput type="number"
+          name="price-product" formControlName="price" placeholder="" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>URl Imagen</mat-label>
+        <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="1000" matInput type="url"
+          name="imageUrl-product" formControlName="imageUrl" placeholder="" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>Cantidad</mat-label>
+        <input class="input-text" autocomplete="off" appOnlyText matInput type="number" name="availableQuantity-product"
+          formControlName="availableQuantity" placeholder="" />
+      </mat-form-field>
+
+      <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="category">
+          <mat-option value="fruta">Fruta</mat-option>
+          <mat-option value="verdura">Verdura</mat-option>
+          <mat-option value="otros">Otros</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  <button  *ngIf="!this.data"mat-raised-button color="primary" type="button" (click)="onClickAddProduct()">Agregar Producto</button>
+  <button *ngIf="this.data" mat-raised-button color="primary" type="button" (click)="onClickEditateContact()">Editar Producto</button>
+</div>

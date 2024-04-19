@@ -1,0 +1,12 @@
+.warning-popup {
+  padding: 20px;
+  border: 1px solid #ffcc00;
+  background-color: #ffffcc;
+  border-radius: 5px;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header,
+.map,
+.overlay-div {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  z-index: 2;
+  overflow: hidden;
+  height: 10vh;
+}
+
+.background-image {
+  background-color: #151F6D;
+}
+
+.body{
+  background: #c7fff3;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  /* filter: grayscale(100%) saturate(0%) sepia(0.6) hue-rotate(31deg) saturate(103%) brightness(84%); */
+}
+
+.map {
+  height: 70vh;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.overlay-div {
+  position: absolute;
+  top: calc(10vh - 50px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+
+
+@media only screen and (max-width: 688px) {
+  .overlay-div{
+      width: auto;
+      height: auto;
+      top: calc(30vh - 120px);
+  }
+
+}

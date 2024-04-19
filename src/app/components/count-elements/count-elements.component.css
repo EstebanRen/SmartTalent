@@ -1,0 +1,35 @@
+.quntty-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.quntty-numb {
+  font-size: 24px;
+  margin-bottom: 10px;
+  width: 57px;
+  height: 39px;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  /* font-size: 18px;
+  text-align: center; */
+}
+
+.quntty-mandp {
+  width: 45px;
+  height: 39px;
+  background-color: #f2f2f2;
+  border: 1px solid #dadada;
+  color: #828282;
+  font-size: 23px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  float: left;
+  border-left: 0px;
+}
+
+.center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

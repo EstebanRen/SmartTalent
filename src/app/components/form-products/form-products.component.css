@@ -1,0 +1,17 @@
+.pop-up-info {
+  padding: 40px;
+}
+
+.form-teams {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-evenly;
+}
+mat-form-field{
+  padding-bottom: 20px ;
+}
+button{
+  width: 100%;
+}

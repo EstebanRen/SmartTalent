@@ -1,0 +1,75 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a href="">
+      <img src="../../../assets/images/icon-home.svg" alt="Logo" />
+    </a>
+  </div>
+
+  <div class="navbar-icons">
+    <a class="icon-link" [matMenuTriggerFor]="listsCart" *ngIf="source==''">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+    <a class="icon-link" [matMenuTriggerFor]="loginMenu" >
+      <i class="fas fa-user"></i>
+    </a>
+    <a class="icon-link" *ngIf="currentUser?.isAdmin" (click)="goAdmin()">
+      <i class="fas fa-cogs"></i>
+    </a>
+  </div>
+</nav>
+<mat-menu #listsCart="matMenu" class="lists-cart">
+  <ng-container *ngIf="itemsCart && itemsCart.length > 0; else emptyCart">
+    <h2 class="title-mat">Carrito</h2>
+    <div *ngFor="let product of itemsCart" class="product-item">
+      <div>
+        <img [src]="product.imageUrl" alt="Producto" class="product-imagen" />
+      </div>
+      <div class="product-details">
+        <span class="product-name">{{ product.name }}</span>
+        <span class="product-quantity">Cantidad: {{ product.quantyti }}</span>
+        <span class="product-quantity">Precio: {{ product.price * product.quantyti | priceCop }}</span>
+      </div>
+      <div>
+        <button mat-icon-button class="delete-button" title="Eliminar Producto" (click)="deleteProduct(product)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="finalize-button">
+      <button mat-flat-button color="primary" (click)="addOrder()">
+        Finalizar compra
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #emptyCart>
+    <div class="empty-cart-message">
+      <h2>El carrito está vacío.</h2>
+    </div>
+  </ng-template>
+</mat-menu>
+<mat-menu #loginMenu="matMenu" #menuTrigger="matMenuTrigger" [matMenuTriggerFor]="loginMenu" class="login-menu">
+
+  <form *ngIf="!currentUser" (ngSubmit)="onLoginSubmit();" #loginForm="ngForm" (click)="$event.stopPropagation()">
+    <h2 class="title-mat">Login</h2>
+    <div class="login-form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="loginData.email" required>
+      </mat-form-field>
+    </div>
+    <div class="login-form-group">
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" name="password" [(ngModel)]="loginData.password" required>
+      </mat-form-field>
+    </div>
+    <div class="login-actions">
+      <button mat-raised-button color="primary" type="submit" (click)="menuTrigger.closeMenu()">Iniciar sesión</button>
+    </div>
+  </form>
+  <div *ngIf="currentUser" class="empty-cart-message">
+    <h2>Bienvenido {{ currentUser.name }}</h2>
+    <button mat-raised-button color="warn" (click)="logout()">Cerrar sesión</button>
+  </div>
+</mat-menu>

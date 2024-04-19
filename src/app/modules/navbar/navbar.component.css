@@ -1,0 +1,100 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  color: white;
+}
+
+.navbar-logo img {
+  cursor: pointer;
+  height: 140px;
+}
+.navbar-icons{
+  cursor: pointer;
+  width: 150px;
+}
+.navbar-icons .icon-link {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-icons .icon-link:hover {
+  color: #ddd;
+}
+
+.lists-cart{
+  min-width: 300px !important;
+  max-width: 500px !important;
+  width: auto;
+}
+.product-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-imagen {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-quantity {
+  font-size: 0.8em;
+  color: grey;
+}
+
+.delete-button {
+  margin-left: 10px;
+}
+
+.finalize-button {
+  display: flex;
+  justify-content: center;
+}
+.empty-cart-message{
+  padding: 20px;
+}
+.empty-cart-message h2{
+  margin: 0;
+}
+.title-mat{
+  margin: 20px !important;
+}
+.login-menu {
+  min-width: 300px !important;
+  max-width: 500px !important;
+  width: auto;
+}
+.login-menu form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-group {
+  margin-bottom: 20px;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+

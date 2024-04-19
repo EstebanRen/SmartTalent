@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --light-grayish-cyan-bg: hsl(180, 52%, 96%);
+  --light-grayish-cyan-filter: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --dark-gray: hsl(0, 0%, 59%);
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

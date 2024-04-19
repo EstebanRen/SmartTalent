@@ -1,0 +1,30 @@
+<div class="list">
+  <div *ngFor="let item of products" class="product" [ngClass]="{'no-show': item.availableQuantity==0}">
+    <div  *ngIf="item.availableQuantity!=0" >
+      <div class="product-image">
+        <img [src]="item.imageUrl" alt="Image" />
+      </div>
+      <div class="card-details">
+        <div class="name">
+          <span class="tag featured">{{item.name}}</span>
+        </div>
+        <br />
+        <div class="info">
+          <div>
+            <div class="title">Descripción</div>
+            <div class="text">{{item.description}}</div>
+            <div class="title">Precio</div>
+            <div class="text">{{item.price | priceCop }}</div>
+          </div>
+          <div>
+            <div class="card-buttons">
+              <button mat-flat-button color="primary" (click)="onClickAddCart(item)">Agregar al carrito</button>
+              <app-count-elements (quantityChanged)="onQuantityChanged($event)"></app-count-elements>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+  width: 100vw;
+}
+.mat-elevation-z8 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.table-info {
+  background: #ffffff;
+  padding: 30px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: 32px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 90%;
+}
+.butons-table{
+  margin-bottom: 20px;
+}

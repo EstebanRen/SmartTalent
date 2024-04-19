@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="header background-image">
+    <app-navbar [source]="'admin'"></app-navbar>
+  </div>
+  <div class="body">
+    <div class="list">
+      <app-all-products (addProduct)="addProduct($event)" (editProduct)="editProduct($event)"
+        (deleteProduct)="deleteProduct($event)" [products]="this.products"></app-all-products>
+    </div>
+  </div>
+</div>
