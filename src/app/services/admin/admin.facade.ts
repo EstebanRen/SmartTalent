@@ -3,7 +3,6 @@ import { ProductEditEvent, Products } from '../../entities/products.model';
 import { AdminService } from './admin.service';
 import { AdminStateService } from './admin-state.service';
 import { Subscription } from 'rxjs';
-import { ref } from 'vue';
 import { PupUpMessageComponent } from '../../components/pup-up-message/pup-up-message.component';
 import { MatDialog } from '@angular/material/dialog';
 
